@@ -8,8 +8,8 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Copiar el archivo del proyecto y restaurar las dependencias
-COPY ["Prueba.csproj", "./"]
-RUN dotnet restore "./Prueba.csproj"
+COPY ["Prueba/Prueba.csproj", "Prueba/"]
+RUN dotnet restore "Prueba/Prueba.csproj"
 
 # Copiar todo el código fuente y compilar el proyecto
 COPY . .
